@@ -16,14 +16,13 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@green: #44b244;
-@gray-base: #000000;
-@gray: #ACACAC;
-@gray-dark: #636363;
-@gray-light: #CCCCCC;
-@gray-lighter: #F2F2F2;
+@gray-base:             #000000;
+@gray-dark:             #636363;
+@gray:                  #ACACAC;
+@gray-light:            #CCCCCC;
+@gray-lighter:          #F2F2F2;
 
-@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-primary:         #44b244; // green
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -37,7 +36,7 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @gray-base;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -58,8 +57,10 @@
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
+@font-size-med:           ceil((@font-size-base * 1.125)); // ~16px
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-x-small:       ceil((@font-size-base * 0.425)); // ~6px
 
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
@@ -113,7 +114,7 @@
 
 @border-radius-base:        4px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       2.5px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -153,9 +154,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              #fff;
+@btn-default-bg:                 @gray;
+@btn-default-border:             @gray-dark;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;

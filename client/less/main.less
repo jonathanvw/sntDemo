@@ -1,19 +1,15 @@
 @import "bootstrap/custom.bootstrap.import.less";
 @import "bootstrap/custom.bootstrap.mixins.import.less";
+@import "custom-mixins.less";
 
 body{
   background: @gray-base;
-  font-size: 16px;
-  font-family: "Helvetica Neue", "Helvetica", sans-serif;
-  color: @gray-base;
+  font-size: @font-size-med;
+  font-family: @font-family-sans-serif;
 }
 
-.hover-state{
+.hover-state(){
   background: @gray;
-}
-
-.hidden{
-  display:none;
 }
 
 .widget--find-home{
@@ -26,15 +22,14 @@ body{
   .find-home-teaser{
     background: @gray-base;
     padding: 12px 10px;
-    border-top: 3px solid @green;
-    
+    border-top: 3px solid @brand-primary;
+
     .find-home-teaser-title{
-      font-size: 18px;
-      font-weight: normal;
+      font-size: @font-size-large;
       color: #FFFFFF;
       margin: 0;
       padding: 0 6px;
-      border-left: 3px solid @green;
+      border-left: 3px solid @brand-primary;
     }
   }
 
@@ -42,7 +37,7 @@ body{
     display: table;
     width: 100%;
     background: 
-      linear-gradient( fade(@green, 75%), fade(@green, 75%)),
+      linear-gradient( fade(@brand-primary, 75%), fade(@brand-primary, 75%)),
       url("/img/streetLandscape.jpg") 50% 50% no-repeat;
     background-size:cover;
     min-height: 102px;
@@ -53,40 +48,39 @@ body{
       vertical-align: middle;
       margin:0px;
       color: #FFFFFF;
-      font-size: 30px;
-      font-weight: lighter;
+      font-size: @font-size-h2;
+      .font-lightest();
       text-align: center;
 
       strong{
-        font-weight: bolder;
+        .font-boldest();
         white-space: nowrap;
       }
     }
   }
 
   .input-label{
-    font-size: 18px;
-    font-weight: 300;
+    font-size: @font-size-large;
+    .font-lighter();
   }
 
   .picker-wrapper{
     padding: 18px 10px 0 10px;
     background: -webkit-linear-gradient(top,  rgba(0,0,0,0.13) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,    rgba(0,0,0,0.13) 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  
+
     .prop-type-picker{
       border-bottom: 1px solid @gray-light;
       .clearfix();
 
-
       .home-count{
         float: right;
         text-align: right;
-        font-size: 16px;
-        font-weight: 300;
+        font-size: @font-size-med;
+        .font-lighter();
 
         .light-bull{
-          font-size: 6px;
+          font-size: @font-size-x-small;
           position: relative;
           top: -2px;
         }
@@ -97,7 +91,7 @@ body{
         margin-bottom: 14px;
         background: @gray-lighter;
         border: 1px solid @gray-light; 
-        border-radius: 6px;
+        border-radius: @border-radius-large;
         position: relative;
         cursor: pointer;
 
@@ -113,11 +107,11 @@ body{
           right:8px;
           background: #FFFFFF;
           border: 1px solid @gray-light;
-          border-radius: 5px;
+          border-radius: @border-radius-large;
 
           .fa-check{
             display: none;
-            color: @green;
+            color: @brand-primary;
             position: absolute;
             top: 1px;
             left: 1px;
@@ -138,7 +132,7 @@ body{
       padding-bottom: 30px;
       border-bottom: 1px solid @gray-light;
       .clearfix();
-      
+
       .price-range-slider{
         display: block;
         width: 92%;
@@ -152,17 +146,17 @@ body{
           background: @gray-lighter;
           position: relative;
           top:41.7%;
-          border-radius: 2.5px;
+          border-radius: @border-radius-small;
 
           .highlight{
             display: block;
             height: 100%;
-            background: @green;
+            background: @brand-primary;
             position:absolute;
             left: 0%;
             right: 0%;
           }
-          
+
         }
         .marker{
           display: block;
@@ -184,8 +178,8 @@ body{
           }
 
           .marker-label{
-            font-size: 14px;
-            font-weight: 300;
+            font-size: @font-size-base;
+            .font-lighter();
             text-align: center;
             position: relative;
             left: 50%;
@@ -198,6 +192,7 @@ body{
             }
           }
         }
+
         .label-avg-price{
           background: #FFFFFF;
           padding: 4px 18px;
@@ -206,10 +201,10 @@ body{
           bottom: -22px;
           left: 50%;
           transform: translatex(-50%);
-          font-size: 12px;
-          font-weight: 300;
+          font-size: @font-size-small;
+          .font-lighter();
           border: 1px solid @gray-lighter;
-          border-radius: 4px;
+          border-radius: @border-radius-base;
           min-width: 160px;
 
           &:before{
@@ -235,24 +230,24 @@ body{
               top: 26px;
             }
           }
-
         }
       }
     }
+
     .must-have-picker{
-      margin-top:14px;  
+      margin-top:14px;
       padding-bottom: 20px;
       border-bottom: 1px solid @gray-light;
       .clearfix();
-      
+
       .adv-link{
         float: right;
         text-align:right;
-        font-size: 14px;
+        font-size: @font-size-base;
 
         a{
           color: @gray-base;
-          font-weight: bolder;
+          .font-boldest();
         }
       }
 
@@ -261,7 +256,7 @@ body{
         margin-bottom: 14px;
         background: @gray-lighter;
         border: 1px solid @gray-light; 
-        border-radius: 6px;
+        border-radius: @border-radius-large;
         position: relative;
         cursor: pointer;
 
@@ -285,14 +280,15 @@ body{
       margin-left: 20px; 
       border: none;
       padding: 10px 16px;
-      font-size: 14px;
+      font-size: @font-size-base;
     }
+
     .btn-default{
       background: @gray;
       color: #FFFFFF;
     }
+
     .btn-primary{
-      background: @green;
       padding: 10px 30px;
     }
   }
@@ -303,6 +299,7 @@ body{
     padding-right: 0px;
     padding-left: 20px;
   }
+
   .row-buttons{
     margin-left: -36px;
   }
@@ -311,9 +308,11 @@ body{
 @media (min-width: 320px) and (max-width: @screen-sm) {
   .col-btn-2x4{
     padding: 0;
+
     &:nth-child(even){
       padding-left:10px;
     }
+
     &:nth-child(odd){
       padding-right:10px;
     }
@@ -326,4 +325,3 @@ body{
     padding: 0;
   }
 }
-
