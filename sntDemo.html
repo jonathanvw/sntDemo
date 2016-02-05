@@ -1,0 +1,111 @@
+<body>
+  {{> findHome}}
+</body>
+
+<template name="findHome">
+  <div class="widget widget--find-home">
+    <div class="find-home-teaser"><h2 class="find-home-teaser-title">Find the home you are looking&nbsp;for</h2></div>
+    {{> banner}}
+    <div class="picker-wrapper">
+      {{> propTypePicker}}
+      {{> priceRangePicker}}
+      {{> mustHavePicker}}
+    </div>
+    {{> actionBar}}
+  </div>
+</template>
+
+<template name="banner">
+<div class="banner">
+  <h3 class="title">Describe Your Perfect <strong>{{ locationStr }}</strong>&nbsp;Home</h3>
+</div>
+</template>
+
+<template name="propTypePicker">
+  <div class="prop-type-picker">
+    <div class="home-count">25 Homes for Sale <span
+        class="light-bull">&bull;</span>&nbsp;{{ locationStr }}</div>
+    <label class="input-label">Pick a Property&nbsp;Type</label>
+    <div class="container-fluid">
+      <div class="row row-buttons">
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="prop-type-option">
+            <i class="icon-house"></i> House
+            <div class="check-box"><i class="fa fa-check"></i></div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="prop-type-option">
+            <i class="icon-condo"></i> Condo 
+            <div class="check-box"><i class="fa fa-check"></i></div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="prop-type-option">
+            <i class="icon-apartment"></i> Apartment 
+            <div class="check-box"><i class="fa fa-check"></i></div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="prop-type-option">
+            <i class="icon-townhome"></i> Townhome 
+            <div class="check-box"><i class="fa fa-check"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="priceRangePicker">
+  <div class="price-range-picker">
+    <label class="input-label">Price Range</label>
+    <div class="price-range-slider">
+      <div class="price-range-bar">
+        <div class="highlight"></div>
+      </div> 
+      <div class="marker marker-min"><div class="marker-label">$85K</div></div>
+      <div class="label-avg-price">$1.3M Average</div>
+      <div class="marker marker-max"><div class="marker-label">$2.5M+</div></div>
+      <div class="hidden">&nbsp;{{ resized }}</div>
+    </div>
+  </div>
+</template>
+
+<template name="mustHavePicker">
+  <div class="must-have-picker">
+    <div class="float-right adv-link">Want more Advanced&nbsp;Filters? <a href="#">Click&nbsp;Here</a></div>
+    <label class="input-label">Must Haves</label>
+    <div class="container-fluid">
+      <div class="row row-buttons">
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="must-have-item select">
+            Bedrooms <i class="fa fa-caret-down pull-right"></i>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="must-have-item select">
+            Bathrooms <i class="fa fa-caret-down pull-right"></i>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="must-have-item select">
+            Square Feet <i class="fa fa-caret-down pull-right"></i>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-btn-2x4">
+          <div class="must-have-item">
+            Lot Size <i class="fa fa-caret-down pull-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="actionBar">
+<div class="action-bar">
+  <button class="btn btn-primary pull-right">Find Your Home <i class="fa fa-angle-right"></i></button>
+  <button class="btn btn-default pull-right">Clear Selection <i class="fa fa-times"></i></button>
+</div>
+</template>
