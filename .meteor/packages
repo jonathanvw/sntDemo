@@ -23,3 +23,5 @@ less
 gadicohen:headers
 http
 dbernhard:jquery-ui-draggable
+fastclick
+dsyko:jquery-ui-touch-punch
